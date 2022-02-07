@@ -2,7 +2,7 @@
 
 $nomeApplicazione = "AcrossProject";
 
-$word = $_GET['parola'];
+$word = isset($_GET['parola']) ? $_GET['parola'] : '';
 
 if (validate($word)) {
 	if (isPalindroma($word))
