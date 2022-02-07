@@ -35,12 +35,13 @@ function isPalindroma($word){
 function writeLog($log) {
     global $nomeApplicazione;
     $date = date("dmY");
+    $date_inner = date("d/m/Y");
     $log_location = "logs";
     if (!file_exists($log_location)) 
        mkdir($log_location, 0777, true);
     
     $log_file_data = $log_location.'/' . $date . "-" . $nomeApplicazione . '.log';
 
-    file_put_contents($log_file_data, $log. "\n", FILE_APPEND);
+    file_put_contents($log_file_data, "[$date_inner] ".$log. "\n", FILE_APPEND);
 } 
 ?>
